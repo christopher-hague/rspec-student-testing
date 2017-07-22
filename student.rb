@@ -4,13 +4,13 @@ class Student
 
   @@all = []
 
-  def initialize(name, true_pal, clique, teacher, homeroom, intelligence)
-    @name = name
-    @true_pal = true_pal
-    @clique = clique
-    @teacher = teacher
-    @homeroom = homeroom
-    @intelligence = intelligence
+  def initialize(student_info)
+    @name = student_info[:name]
+    @true_pal = student_info[:true_pal]
+    @clique = student_info[:clique]
+    @teacher = student_info[:teacher]
+    @homeroom = student_info[:homeroom]
+    @intelligence = student_info[:intelligence]
     @@all << self
   end
 

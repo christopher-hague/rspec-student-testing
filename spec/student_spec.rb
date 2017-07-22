@@ -3,8 +3,23 @@ require './student'
 describe Student do
 
   before(:all) do
-    @tommy = Student.new("Tommy", true, "cool kids", "Wroble", 212, 7)
-    @danny = Student.new("Danny", false, "smart kids", "Jentzen", 211, 10)
+    @tommy = Student.new({
+      name: "Tommy",
+      true_pal: true,
+      clique: "cool kids",
+      teacher: "Wroble",
+      homeroom: 212,
+      intelligence: 7
+    })
+
+    @danny = Student.new({
+      name: "Danny",
+      true_pal: false,
+      clique: "smart kids",
+      teacher: "Jentzen",
+      homeroom: 211,
+      intelligence: 10
+    })
   end
 
   context "When testing the Student class" do
@@ -14,7 +29,6 @@ describe Student do
       it "can initialize a Student" do
         expect(@tommy).to be_instance_of(Student)
         expect(@danny).to be_instance_of(Student)
-        # expect(richie).to be_instance_of(Student)
       end
 
       it "should initialize a student with a name" do
@@ -80,11 +94,3 @@ describe Student do
 
   end
 end
-
-
-# show how the test passes with string 'mikey', then fails with string 'michael'
-# describe "print_mikey" do
-#   it "should print 'mikey'" do
-#     expect(print_mikey).to eq 'michael'
-#   end
-# end
