@@ -55,6 +55,11 @@ describe Student do
           expect(@danny.homeroom).to be_instance_of(Fixnum)
           expect(@tommy.homeroom).to eq(212)
         end
+
+        it "should intialize with an intelligence rating" do
+          expect(@danny.intelligence).to be_instance_of(Fixnum)
+          expect(@tommy.intelligence).to eq(7)
+        end
       end
 
       describe "#now_friends" do
@@ -78,7 +83,7 @@ describe Student do
     context "class methods" do
 
       describe "#list_friends" do
-        it "should list all students who are true pals of Mikey's" do
+        it "should list all students who are true pals with Mikey" do
           expect(Student.list_friends).to eq([@danny])
         end
       end
